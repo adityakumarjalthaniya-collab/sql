@@ -1,0 +1,262 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aadi               |
+| aditya             |
+| information_schema |
+| moviesdb           |
+| mysql              |
+| performance_schema |
+| selfjoindb         |
+| sys                |
+| world              |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> create database demo_db;
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aadi               |
+| aditya             |
+| demo_db            |
+| information_schema |
+| moviesdb           |
+| mysql              |
+| performance_schema |
+| selfjoindb         |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> use demo_db;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| demo_db    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> rop database demo_db;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rop database demo_db' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aadi               |
+| aditya             |
+| demo_db            |
+| information_schema |
+| moviesdb           |
+| mysql              |
+| performance_schema |
+| selfjoindb         |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> use demo_db;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| demo_db    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> create table students(studentID int , studentName varchar(50), age int, city varchar(50));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> alter table students add Email varchar(100);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
+Empty set (0.00 sec)
+
+mysql> desc students;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| studentID   | int          | YES  |     | NULL    |       |
+| studentName | varchar(50)  | YES  |     | NULL    |       |
+| age         | int          | YES  |     | NULL    |       |
+| city        | varchar(50)  | YES  |     | NULL    |       |
+| Email       | varchar(100) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql>
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aadi               |
+| aditya             |
+| demo_db            |
+| information_schema |
+| moviesdb           |
+| mysql              |
+| performance_schema |
+| selfjoindb         |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> use demo_db;
+Database changed
+mysql> show tablel;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tablel' at line 1
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show tables;
++-------------------+
+| Tables_in_demo_db |
++-------------------+
+| students          |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> select * from students;
+Empty set (0.00 sec)
+
+mysql> desc students;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| studentID   | int          | YES  |     | NULL    |       |
+| studentName | varchar(50)  | YES  |     | NULL    |       |
+| age         | int          | YES  |     | NULL    |       |
+| city        | varchar(50)  | YES  |     | NULL    |       |
+| Email       | varchar(100) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table collage( collageID int,
+    -> cantineID int,
+    -> calss int,
+    -> name varchar(50),
+    -> subject varchar(40)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_demo_db |
++-------------------+
+| collage           |
+| students          |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> select demo_db;
+ERROR 1054 (42S22): Unknown column 'demo_db' in 'field list'
+mysql> select database()
+    -> ;
++------------+
+| database() |
++------------+
+| demo_db    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select * from collage;
+Empty set (0.00 sec)
+
+mysql> select * from students;
+Empty set (0.00 sec)
+
+mysql> desc students;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| studentID   | int          | YES  |     | NULL    |       |
+| studentName | varchar(50)  | YES  |     | NULL    |       |
+| age         | int          | YES  |     | NULL    |       |
+| city        | varchar(50)  | YES  |     | NULL    |       |
+| Email       | varchar(100) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc collage;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| collageID | int         | YES  |     | NULL    |       |
+| cantineID | int         | YES  |     | NULL    |       |
+| calss     | int         | YES  |     | NULL    |       |
+| name      | varchar(50) | YES  |     | NULL    |       |
+| subject   | varchar(40) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into collage
+    -> (collageID +
+    ->
+    -> ^C
+mysql> insert into collage
+    -> (collageID, cantineID,calss, name, subject)
+    -> values(1,2,10,"aditya","sql"),
+    -> (2,3,9,"mukesh","python");
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * collage;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'collage' at line 1
+mysql> select * from collage;
++-----------+-----------+-------+--------+---------+
+| collageID | cantineID | calss | name   | subject |
++-----------+-----------+-------+--------+---------+
+|         1 |         2 |    10 | aditya | sql     |
+|         2 |         3 |     9 | mukesh | python  |
++-----------+-----------+-------+--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> alter table collage
+    -> add marks int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc collage;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| collageID | int         | YES  |     | NULL    |       |
+| cantineID | int         | YES  |     | NULL    |       |
+| calss     | int         | YES  |     | NULL    |       |
+| name      | varchar(50) | YES  |     | NULL    |       |
+| subject   | varchar(40) | YES  |     | NULL    |       |
+| marks     | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into collage(marks)
+    -> values(200);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> ;
+ERROR:
+No query specified
+
+mysql> select * from collage;
++-----------+-----------+-------+--------+---------+-------+
+| collageID | cantineID | calss | name   | subject | marks |
++-----------+-----------+-------+--------+---------+-------+
+|         1 |         2 |    10 | aditya | sql     |  NULL |
+|         2 |         3 |     9 | mukesh | python  |  NULL |
+|      NULL |      NULL |  NULL | NULL   | NULL    |   200 |
++-----------+-----------+-------+--------+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql>
